@@ -1,0 +1,18 @@
+x00: 1
+x01: 1
+x02: 1
+y00: 0
+y01: 1
+y02: 0
+
+x00 XOR y00 -> z00
+x00 AND y00 -> b
+x01 AND y01 -> a
+x02 AND y02 -> c
+x00 XOR y00 -> d
+x01 XOR y01 -> e
+x02 XOR y02 -> f
+e XOR a -> z01
+a AND e -> g
+b OR g -> h
+h XOR f -> z02
