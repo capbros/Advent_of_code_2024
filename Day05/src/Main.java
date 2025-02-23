@@ -1,6 +1,3 @@
-import com.sun.jdi.ArrayReference;
-
-import javax.print.attribute.HashPrintJobAttributeSet;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -12,7 +9,7 @@ public class Main {
         while (input.hasNextLine()) {
             line = input.nextLine();
             if (line.isEmpty() || !(line.matches("\\d+\\|\\d+"))) break;
-            String[] ruleNumbers = line.split("[\\|$]");
+            String[] ruleNumbers = line.split("[|$]");
             ruleList.add(new Rule(Integer.parseInt(ruleNumbers[0]),
                     Integer.parseInt(ruleNumbers[1])));
         }
@@ -30,7 +27,6 @@ public class Main {
             if (line.isEmpty() || !line.matches("\\d+(,\\d+)*")) break;
             Map<Integer, Integer> pageToPosition = new HashMap<>();
             String[] pagesArray = line.split(",");
-            int middle = Integer.parseInt(pagesArray[pagesArray.length / 2]);
             for (int i = 0; i < pagesArray.length; i++) {
                 pageToPosition.put(Integer.parseInt(pagesArray[i]), i);
             }

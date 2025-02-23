@@ -13,11 +13,6 @@ public class FlexibleInt {
         this.adjust();
     }
 
-    public FlexibleInt (FlexibleInt flexibleInt) {
-        this.values = new ArrayList<>();
-        this.values.addAll(flexibleInt.values);
-    }
-
     public void adjust() {
         for (int i = 0; i < values.size()-1; i++) {
             values.set(i+1, values.get(i+1) + values.get(i)/mod);
@@ -58,19 +53,6 @@ public class FlexibleInt {
         this.adjust();
     }
 
-    public void mul(long factor) {
-        for (int i = 0; i < values.size(); i++) {
-            this.values.set(i, this.values.get(i)*factor);
-        }
-        this.adjust();
-    }
-
-    public static FlexibleInt sum(FlexibleInt a, FlexibleInt b) {
-        FlexibleInt res = new FlexibleInt(a);
-        res.add(b);
-        return res;
-    }
-
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -98,14 +80,4 @@ public class FlexibleInt {
         return Objects.hash(exponent, mod, values);
     }
 
-    public int compareTo (long val) {
-        FlexibleInt other = new FlexibleInt(val);
-        if (this.values.size() > other.values.size()) return 1;
-        if (this.values.size() < other.values.size()) return -1;
-        for (int i = this.values.size()-1; i >= 0; i--) {
-            if (this.values.get(i) > other.values.get(i)) return 1;
-            if (this.values.get(i) < other.values.get(i)) return -1;
-        }
-        return 0;
-    }
 }

@@ -15,6 +15,7 @@ public class Main2 {
             }
         }
         Map<Character> map = new Map<>(list);
+        assert prev != null;
         map.set(prev, 'X');
         Coordinates start = new Coordinates(prev);
         Coordinates direction = new Coordinates(0, -1);

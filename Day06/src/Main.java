@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -19,6 +18,7 @@ public class Main {
         }
         Map<Character> map = new Map<>(list);
         int tot = 1;
+        assert start != null;
         map.set(start, 'X');
         Coordinates direction = new Coordinates(0, -1);
         Coordinates currentPosition = new Coordinates(start);
